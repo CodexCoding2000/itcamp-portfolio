@@ -118,6 +118,7 @@ body.loaded .landing-page .subtitle {
     padding: 0 20px;
     border-radius: 50px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: var(--navbar-border);
     z-index: 1069;
     transition: 0.23s;
@@ -380,6 +381,7 @@ body.loaded .landing-page .subtitle {
     height: 100%;
     background: rgb(24, 24, 24, 0.3);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: top 0.4s;
     box-sizing: border-box;
     padding: 22px;
