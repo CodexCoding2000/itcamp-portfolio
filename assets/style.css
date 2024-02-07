@@ -45,6 +45,55 @@ body {
     padding: 0;
 }
 
+body::before {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+
+    background: var(--background);
+    z-index: 1070;
+    transition: 0.5s;
+}
+
+body.loaded::before {
+    top: -100dvh;
+}
+
+body.loaded .navbar {
+    opacity: 0;
+    translate: 0 -70px;
+    animation: fadeIn .75s forwards;
+    animation-delay: calc(0.25s + .5s);
+}
+
+body.loaded .landing-page .title {
+    opacity: 0;
+    scale: 90%;
+    animation: fadeOpacityIn 1s forwards;
+    animation-delay: calc(0.2s + .5s);
+}
+
+body.loaded .landing-page .subtitle {
+    opacity: 0;
+    scale: 90%;
+    animation: fadeOpacityIn 1s forwards;
+    animation-delay: calc(0.3s + .5s);
+}
+
+@keyframes fadeOpacityIn {
+    from {
+        opacity: 0;
+        scale: 90%;
+    }
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
 .container,
 .container-fluid,
 .container-xxl,
@@ -63,7 +112,7 @@ body {
     position: absolute;
     top: 20px;
     width: 70dvw;
-    height: 50px;
+    height: 60px;
     background-color: var(--navbar-bg);
     box-sizing: border-box;
     padding: 0 20px;
@@ -79,30 +128,39 @@ body {
 
 .navbar.show {
     height: 100dvh;
-    line-height: 50px;
     border: none;
 }
 
 .navbar-body {
     position: relative;
     width: 100vw;
-    flex: 0 0 50px;
+    flex: 0 0 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.navbar.show .navbar-body{
+.navbar.show .navbar-body {
     border-bottom: var(--navbar-border);
     border-style: dashed;
 }
 
 .navbar-content {
     position: absolute;
-    top: 60px;
+    top: 80px;
     width: 100vw;
-    height: calc(100dvh - 60px);
+    height: calc(100dvh - 80px);
     pointer-events: none;
+}
+
+.navbar-content .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.navbar-content .nav-link {
+    text-align: center;
 }
 
 .navbar.show .navbar-content {
@@ -320,9 +378,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(24, 24, 24, .3);
+    background: rgb(24, 24, 24, 0.3);
     backdrop-filter: blur(10px);
-    transition: top .4s;
+    transition: top 0.4s;
     box-sizing: border-box;
     padding: 22px;
 }
@@ -413,7 +471,7 @@ b {
 
 a {
     text-decoration: none;
-    transition: .23s;
+    transition: 0.23s;
 }
 
 a:hover {
@@ -470,11 +528,13 @@ section.landing-page {
 
 @keyframes fadeIn {
     from {
+        opacity: 0;
         translate: 0 -70px;
     }
 
     to {
         translate: 0 0;
+        opacity: 1;
     }
 }
 
@@ -527,6 +587,7 @@ section.landing-page {
 
     .navbar-body .navbar-menu {
         display: flex;
+        gap: 20px;
     }
 
     .navbar-body .navbar-button {
