@@ -569,7 +569,7 @@ section.landing-page {
     }
 
     .landing-page .subtitle {
-        font-size: 18px;
+        font-size: clamp(14px, 16px, 18px);
         margin-top: -30px;
     }
 
