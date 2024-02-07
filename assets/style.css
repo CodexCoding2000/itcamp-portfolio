@@ -141,17 +141,15 @@ body.loaded .landing-page .subtitle {
     justify-content: space-between;
 }
 
-.navbar.show .navbar-body {
-    border-bottom: var(--navbar-border);
-    border-style: dashed;
-}
-
 .navbar-content {
     position: absolute;
-    top: 80px;
+    top: 60px;
+    box-sizing: border-box;
+    padding-top: 20px;
     width: 100vw;
     height: calc(100dvh - 80px);
     pointer-events: none;
+    border-top: 1px solid white;
 }
 
 .navbar-content .navbar-menu {
