@@ -1,0 +1,302 @@
+@import"https://fonts.googleapis.com/css2?family=Athiti&display=swap";
+@import"https://kit-pro.fontawesome.com/releases/v6.5.1/css/pro.min.css";
+
+@font-face {
+    font-family: PaybAck;
+    src: url(../fonts/PaybAck.ttf)
+}
+
+* {
+    font-family: Athiti, sans-serif;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #fff;
+    --primary: #FF5B00;
+    --primary-u-1: #ff8645;
+
+    --navbar-bg: rgb(24, 24, 24, .4);
+    --navbar-border: 1px solid #e1e1e1;
+    --navbar-text: white;
+
+    --nav-link-default-color: rgb(255, 255, 255, .6);
+    --nav-link-hover-color: rgb(255, 255, 255, .8);
+    --nav-link-active-color: rgb(255, 255, 255);
+    --nav-link-active-hover-color: rgb(255, 255, 255);
+
+    --nav-link-default-bg: transparent;
+    --nav-link-hover-bg: rgb(255, 255, 255, .1);
+    --nav-link-active-bg: var(--primary);
+    --nav-link-active-hover-bg: var(--primary-u-1);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden scroll;
+    margin: 0;
+    padding: 0;
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 1140px;
+    height: 50px;
+    background-color: var(--navbar-bg);
+    padding: 0 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: var(--navbar-border);
+    z-index: 1069;
+    transition: .23s;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-button,
+.nav-link {
+    cursor: pointer;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 500px;
+    transition: .23s;
+    font-weight: bold;
+    color: var(--nav-link-default-color);
+}
+
+.navbar-button:hover,
+.nav-link:hover {
+    color: var(--nav-link-hover-color);
+    background-color: var(--nav-link-hover-bg);
+}
+
+.navbar-button.active,
+.nav-link.active {
+    color: var(--nav-link-active-color);
+    background-color: var(--nav-link-active-bg);
+}
+
+.navbar-button.active:hover,
+.nav-link.active:hover {
+    color: var(--nav-link-active-hover-color);
+    background-color: var(--nav-link-active-hover-bg);
+}
+
+.navbar-button,
+.navbar-brand {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--navbar-text);
+}
+
+.navbar-brand {
+    text-shadow: 0 0 10px var(--navbar-text);
+}
+
+.navbar.scroll {
+    position: fixed;
+    transition: none;
+    top: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    border-radius: 0;
+    border-style: dashed;
+    border-top: none;
+    border-left: 0;
+    border-right: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.scroll-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    opacity: 0;
+    pointer-events: none;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding-bottom: 2px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--nav-link-active-color);
+    z-index: 1069;
+    transition: .23s;
+}
+
+.scroll-to-top.show {
+    bottom: 20px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.scroll-to-top:hover {
+    color: var(--nav-link-active-hover-color);
+    background: var(--nav-link-active-hover-bg);
+}
+
+section {
+    width: 100vw;
+    min-height: 400px;
+    padding: 20px 0;
+}
+
+#about {
+    background: blue;
+}
+
+#work {
+    background: red;
+}
+
+.landing-page::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-image: url("/img/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.landing-page::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(0, 0, 0, .8);
+    z-index: -1;
+}
+
+section.landing-page {
+    position: relative;
+    top: -70px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 6px 6px 10px rgb(0, 0, 0, .5);
+    background: linear-gradient(to top, var(--background), transparent 50%);
+}
+
+.landing-page .title {
+    font-size: 54px;
+    font-weight: bold;
+    color: white;
+}
+
+.landing-page .title b {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.landing-page .subtitle {
+    font-size: 48px;
+    margin-top: -60px;
+    color: white;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        top: -50px;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@media (min-width: 576px) {
+
+    .container-sm,
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1320px;
+    }
+}

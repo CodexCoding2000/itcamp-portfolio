@@ -5,10 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitiphum - Portfolio</title>
+
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand" onclick="scrolltotop()">
+                MY PORTFOLIO
+            </div>
+            <div class="navbar-menu">
+                <div class="nav-link" goto="top">
+                    HOME
+                </div>
+                <div class="nav-link" goto="about">
+                    ABOUT ME
+                </div>
+                <div class="nav-link" goto="work">
+                    MY WORK
+                </div>
+            </div>
+            <div class="navbar-button active">
+                CONTACT ME
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="landing-page" id="home">
+            <p class="title">
+                สวัสดีพีๆ <b>IT CAMP 20</b>
+            </p>
+            <p class="subtitle">
+                สำหรับเว็บไซต์นี้ผมต้องการนำเสนอตัวผมเองให้พี่ๆได้รู้จัก
+            </p>
+        </section>
+        <section id="about">
 
+        </section>
+        <section id="work">
+
+        </section>
+    </main>
+
+    <div class="scroll-to-top" onclick="scrolltotop()">
+        &UpArrow;
+    </div>
+    <script src="assets/main.js"></script>
 </body>
 
 </html>
