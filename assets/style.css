@@ -32,6 +32,8 @@
     --nav-link-active-hover-bg: var(--primary-u-1);
 
     --section-odd: rgb(240, 240, 240);
+
+    --card-background: #fff;
 }
 
 body {
@@ -234,6 +236,7 @@ body {
 .navbar.show.scroll {
     position: fixed;
 }
+
 .navbar:not(.show).scroll {
     position: fixed;
     top: 0vw;
@@ -275,6 +278,87 @@ body {
     pointer-events: all;
 }
 
+.work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.card {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 22px;
+    background: var(--card-background);
+    border-radius: 22px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.card-img img {
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    height: 100%;
+}
+
+.card-info {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(24, 24, 24, .3);
+    backdrop-filter: blur(10px);
+    transition: top .4s;
+    box-sizing: border-box;
+    padding: 22px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: var(--navbar-border);
+}
+
+.card-tags {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card-description {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.badge {
+    font-size: 10px;
+    padding: 0px 8px;
+    background: var(--primary);
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.card:hover .card-info {
+    top: 0;
+}
+
 .scroll-to-top:hover {
     color: var(--nav-link-active-hover-color);
     background: var(--nav-link-active-hover-bg);
@@ -290,7 +374,9 @@ section > .container {
     margin: 0 auto;
 }
 
-#about .title {
+section .title,
+section .title,
+section .title {
     font-size: 48px;
     font-weight: bold;
 }
@@ -323,6 +409,15 @@ section > .container {
 b {
     font-weight: bold;
     color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+    transition: .23s;
+}
+
+a:hover {
+    color: var(--primary-u-1);
 }
 
 .flex {
@@ -384,6 +479,10 @@ section.landing-page {
 }
 
 @media (min-width: 0px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
     .navbar {
         border-top: 0;
         border-left: 0;
@@ -422,6 +521,10 @@ section.landing-page {
 }
 
 @media (min-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .navbar-body .navbar-menu {
         display: flex;
     }
@@ -450,6 +553,10 @@ section.landing-page {
 }
 
 @media (min-width: 992px) {
+    .work-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .flex {
         flex-direction: row;
     }
@@ -477,6 +584,10 @@ section.landing-page {
 }
 
 @media (min-width: 1200px) {
+    .work-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
     .container-xl,
     .container-lg,
     .container-md,

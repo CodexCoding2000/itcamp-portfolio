@@ -17,7 +17,7 @@
                     MY PORTFOLIO
                 </div>
                 <div class="navbar-menu">
-                    <div class="nav-link" goto="top">
+                    <div class="nav-link active" goto="top">
                         HOME
                     </div>
                     <div class="nav-link" goto="about">
@@ -27,7 +27,7 @@
                         MY WORK
                     </div>
                 </div>
-                <div class="navbar-button" goto="contact">
+                <div class="navbar-button active" onclick="gopage('contact')">
                     CONTACT ME
                 </div>
                 <div class="navbar-toggle">
@@ -41,7 +41,7 @@
         <div class="navbar-content">
             <div class="container" style="position: relative;">
                 <div class="navbar-menu" style="flex: 1;">
-                    <div class="nav-link" goto="top">
+                    <div class="nav-link active" goto="top">
                         HOME
                     </div>
                     <div class="nav-link" goto="about">
@@ -75,32 +75,44 @@
                     <img src="img/avatar.png" alt="" style="flex: .5; object-fit: contain;">
                     <p style="flex: 1;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สวัสดีครับ, ผมชื่อ ปอนด์ เรียนอยู่ ม.5
-                        โรงเรียนหนองบัวพิทยาคาร
-                        ผมเริ่มสนใจในการเขียนโปรแกรมมาตั้งแต่ ป.5 ตั้งแต่นั้นมาผมก็เริ่มศึกษา <br>
-                        การเขียนโปรแกรมในภาษาต่างๆ มาเรื่อยๆ จนเมื่อผมขึ้น ม.1 มา
-                        ผมก็ได้มาเจอกับการเขียนเว็บไซต์
-                        ซึ่งเหมือนเป็นเหมือนสิ่งที่ผมหาจากนั้นมาผมก็เริ่มพัฒนาฝีมือของผมเรื่อยมา และได้เรียนรู้การทำงาน
-                        โครงสร้าง และองค์ประกอบต่างๆ ในการทำเว็บไซต์มาเรื่อย<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปัจจุบัน ผมได้ทำ โปรเจค มาหลาย โปรเจคแล้ว
-                        ซึ่งส่วนใหญ่เป็นการทำ
-                        <b>User Interface</b> ในเกม <b>FiveM</b> ถึงแม้ว่าแต่ละโปรเจคจะมีความท้าทายอยู่บ้างแต่ผม
-                        ก็ทำมันออกมาได้ดี
+                        โรงเรียนหนองบัวพิทยาคาร เป็นเด็กที่มีความสนใจในคอมพิวเตอร์เป็นอย่างมาก เพราะผมรู้สึกว่า คอมพิวเตอร์เป็นส่วนหนึ่งในชีวิตประจำวันของเราไปแล้ว ไม่ว่าจะเป็น โทรศัพท์ คอมพิวเตอร์ อุปกรณ์อิเล็กทรอนิคต่างๆ ซึ่งล้วนแต่อยู่ในชีวิตของเราทั้งนั้น<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ซึ่งเกี่ยวกับคอมพิวเตอร์มันก็มีหลายสิ่งหลายอย่างที่อยู่ในนั้น หนึ่งในนั้นก็คือเว็บไซต์ เว็บไซต์เนี่ยเป็นอีกหนึ่งสิ่งที่ในปัจจุบันก็สำคัญมากเช่นกันไม่ว่า
+                        จะเป็น <a href="https://www.facebook.com/" target="_blank"><b>Facebook</b></a>, <a href="https://www.instagram.com/" target="_blank"><b>Instagram</b></a>, <a href="https://www.youtube.com/" target="_blank"><b>Youtube</b></a>
+                        ทั้งหมดนี้ล้วนเป็นสิ่งที่เราใช้ในชีวิตประจำวันของเราทั้งหมด ผมเลยอยากศึกษาหาความรู้ในการการทำเว็บไซต์ หรือ เทคนิคต่างๆ ที่ทำให้มีความปลอดภัยเหมือนกันเว็บไซต์เหล่านี้จากค่าย <a href="https://itcamp20.it.kmitl.ac.th/" target="_blank" rel="noopener noreferrer"><b>IT Camp 20</b></a>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สุดท้ายนี้ผมหวังว่าผมจะได้เข้าไปเรียนรู้ในค่ายนี้ เพื่อที่จะได้รับประสบการณ์ เทคนิค และ ความรู้ต่างๆ เพื่อพัฒนาฝีมือของผมให้ดียิ่งขึ้น
                     </p>
                 </div>
             </div>
         </section>
         <section id="work">
-
+            <div class="container">
+                <div class="flex" style="justify-content: flex-end;">
+                    <p class="title">
+                        ผมเคยทำอะไรมาบ้าง?
+                    </p>
+                </div>
+                <div class="work-grid">
+                </div>
+            </div>
         </section>
 
         <section id="contact">
-
+            <center>
+                <p class="title">
+                    ติดต่อผมได้อย่างไรบ้าง?
+                </p>
+            </center>
         </section>
     </main>
 
     <footer class="footer">
         THANKS FOR READING
     </footer>
+
+    <div class="modal show">
+        <img src="" alt="">
+    </div>
 
     <div class="scroll-to-top" onclick="scrolltotop()">
         &UpArrow;
