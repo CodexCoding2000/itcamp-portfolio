@@ -30,6 +30,8 @@
     --nav-link-hover-bg: rgb(255, 255, 255, .1);
     --nav-link-active-bg: var(--primary);
     --nav-link-active-hover-bg: var(--primary-u-1);
+
+    --section-odd: rgb(240,240,240);
 }
 
 body {
@@ -174,15 +176,16 @@ body {
 section {
     width: 100vw;
     min-height: 400px;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
-#about {
-    background: blue;
+section > .container {
+    margin: 0 auto;
 }
 
-#work {
-    background: red;
+#about .title {
+    font-size: 48px;
+    font-weight: bold;
 }
 
 .landing-page::before {
@@ -210,11 +213,20 @@ section {
     z-index: -1;
 }
 
+b {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.flex {
+    display: flex;
+}
+
 section.landing-page {
     position: relative;
-    top: -70px;
     padding-top: 50px;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,6 +251,10 @@ section.landing-page {
     margin-top: -60px;
     color: white;
     font-weight: bold;
+}
+
+#work {
+    background: var(--section-odd);
 }
 
 @keyframes fadeIn {
@@ -299,4 +315,18 @@ section.landing-page {
     .container {
         max-width: 1320px;
     }
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    transition: .23s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-u-1);
 }
