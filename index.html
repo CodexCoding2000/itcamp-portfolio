@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-mode="light">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body>
+<body class="dark-mode">
     <nav class="navbar">
         <div class="navbar-body">
             <div class="container" style="position: relative;">
@@ -27,9 +27,15 @@
                         MY WORK
                     </div>
                 </div>
-                <div class="navbar-button active" onclick="gopage('contact')">
-                    CONTACT ME
-                </div>
+                <span style="display: flex;gap: 20px;">
+                    <label class="switch">
+                        <input type="checkbox" id="darkmodecontrol" name="darkmodecontrol">
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="navbar-button active" onclick="gopage('contact')">
+                        CONTACT ME
+                    </div>
+                </span>
                 <div class="navbar-toggle">
                     <div class="line"></div>
                     <div class="line"></div>
@@ -53,6 +59,10 @@
                     <div class="nav-link" goto="contact">
                         CONTACT ME
                     </div>
+                    <label class="switch">
+                        <input type="checkbox" id="darkmodecontrol" name="darkmodecontrol">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
             </div>
         </div>
@@ -75,12 +85,21 @@
                     <img src="img/avatar.png" alt="" style="flex: .5; object-fit: contain;">
                     <p style="flex: 1;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สวัสดีครับ, ผมชื่อ ปอนด์ เรียนอยู่ ม.5
-                        โรงเรียนหนองบัวพิทยาคาร เป็นเด็กที่มีความสนใจในคอมพิวเตอร์เป็นอย่างมาก เพราะผมรู้สึกว่า คอมพิวเตอร์เป็นส่วนหนึ่งในชีวิตประจำวันของเราไปแล้ว ไม่ว่าจะเป็น โทรศัพท์ คอมพิวเตอร์ อุปกรณ์อิเล็กทรอนิคต่างๆ ซึ่งล้วนแต่อยู่ในชีวิตของเราทั้งนั้น<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ซึ่งเกี่ยวกับคอมพิวเตอร์มันก็มีหลายสิ่งหลายอย่างที่อยู่ในนั้น หนึ่งในนั้นก็คือเว็บไซต์ เว็บไซต์เนี่ยเป็นอีกหนึ่งสิ่งที่ในปัจจุบันก็สำคัญมากเช่นกันไม่ว่า
-                        จะเป็น <a href="https://www.facebook.com/" target="_blank"><b>Facebook</b></a>, <a href="https://www.instagram.com/" target="_blank"><b>Instagram</b></a>, <a href="https://www.youtube.com/" target="_blank"><b>Youtube</b></a>
-                        ทั้งหมดนี้ล้วนเป็นสิ่งที่เราใช้ในชีวิตประจำวันของเราทั้งหมด ผมเลยอยากศึกษาหาความรู้ในการการทำเว็บไซต์ หรือ เทคนิคต่างๆ ที่ทำให้มีความปลอดภัยเหมือนกันเว็บไซต์เหล่านี้จากค่าย <a href="https://itcamp20.it.kmitl.ac.th/" target="_blank" rel="noopener noreferrer"><b>IT Camp 20</b></a>
+                        โรงเรียนหนองบัวพิทยาคาร เป็นเด็กที่มีความสนใจในคอมพิวเตอร์เป็นอย่างมาก เพราะผมรู้สึกว่า
+                        คอมพิวเตอร์เป็นส่วนหนึ่งในชีวิตประจำวันของเราไปแล้ว ไม่ว่าจะเป็น โทรศัพท์ คอมพิวเตอร์
+                        อุปกรณ์อิเล็กทรอนิคต่างๆ ซึ่งล้วนแต่อยู่ในชีวิตของเราทั้งนั้น<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ซึ่งเกี่ยวกับคอมพิวเตอร์มันก็มีหลายสิ่งหลายอย่างที่อยู่ในนั้น
+                        หนึ่งในนั้นก็คือเว็บไซต์ เว็บไซต์เนี่ยเป็นอีกหนึ่งสิ่งที่ในปัจจุบันก็สำคัญมากเช่นกันไม่ว่า
+                        จะเป็น <a href="https://www.facebook.com/" target="_blank"><b>Facebook</b></a>, <a
+                            href="https://www.instagram.com/" target="_blank"><b>Instagram</b></a>, <a
+                            href="https://www.youtube.com/" target="_blank"><b>Youtube</b></a>
+                        ทั้งหมดนี้ล้วนเป็นสิ่งที่เราใช้ในชีวิตประจำวันของเราทั้งหมด
+                        ผมเลยอยากศึกษาหาความรู้ในการการทำเว็บไซต์ หรือ เทคนิคต่างๆ
+                        ที่ทำให้มีความปลอดภัยเหมือนกันเว็บไซต์เหล่านี้จากค่าย <a href="https://itcamp20.it.kmitl.ac.th/"
+                            target="_blank" rel="noopener noreferrer"><b>IT Camp 20</b></a>
                         <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สุดท้ายนี้ผมหวังว่าผมจะได้เข้าไปเรียนรู้ในค่ายนี้ เพื่อที่จะได้รับประสบการณ์ เทคนิค และ ความรู้ต่างๆ เพื่อพัฒนาฝีมือของผมให้ดียิ่งขึ้น
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สุดท้ายนี้ผมหวังว่าผมจะได้เข้าไปเรียนรู้ในค่ายนี้
+                        เพื่อที่จะได้รับประสบการณ์ เทคนิค และ ความรู้ต่างๆ เพื่อพัฒนาฝีมือของผมให้ดียิ่งขึ้น
                     </p>
                 </div>
             </div>
@@ -98,13 +117,22 @@
         </section>
 
         <section id="contact">
-            <center>
-                <p class="title">
-                    ติดต่อผมได้อย่างไรบ้าง?
-                </p>
-                <div class="work-grid">
-                </div>
-            </center>
+            <div class="container">
+                <center>
+                    <p class="title">
+                        ติดต่อผมได้อย่างไรบ้าง?
+                    </p>
+                    <div class="flex" style="gap: 20px;">
+                        <a class="social" href="" target="_blank">
+                            <img src="img/icon/facebook.png" alt="">
+                        </a>
+
+                        <a class="social" href="" target="_blank">
+                            <img src="img/icon/instagram.png" alt="">
+                        </a>
+                    </div>
+                </center>
+            </div>
         </section>
     </main>
 

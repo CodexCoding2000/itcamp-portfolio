@@ -53,7 +53,7 @@ const ports = [
 ]
 
 scrolltotop = () => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 }
 
 gopage = page => {
@@ -84,11 +84,33 @@ addAnimation = (element, nextAnimation = "", cb) => {
         }
     }, false);
 }
+function setMode(viewMode = localStorage.getItem('viewMode'), elements) {
+    elements.forEach(el => {
+        el.check = (viewMode && viewMode === 'dark')
+    })
+    localStorage.setItem("viewMode", viewMode)
+    if (viewMode && viewMode === 'dark') {
+        document.body.classList.add("dark-mode");
+    } else {
+        document.body.classList.remove("dark-mode");
+    }
+}
 
 window.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("[goto]");
-
+    const darkmodeToggle = document.querySelectorAll("#darkmodecontrol");
+    
+    if (darkmodeToggle) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const newColorScheme = event.matches ? "dark" : "light";
+            setMode(newColorScheme, darkmodeToggle)
+        });        
+    
+        darkmodeToggle.forEach(el => el.addEventListener("change", e => {
+            setMode(e.target.checked ? "dark" : "light", darkmodeToggle)
+        }));
+    }
 
     (async () => {
         document.querySelector("#work-list").innerHTML = "";
@@ -96,7 +118,7 @@ window.addEventListener("DOMContentLoaded", () => {
         for (const key in ports) {
             if (Object.hasOwnProperty.call(ports, key)) {
                 const port = ports[key];
-                
+
                 document.querySelector("#work-list").innerHTML += `<div class="card" onclick="previewImage('port.img')"><div class="card-img"><img src="${port.img}" alt=""></div><div class="card-info"><div class="card-title">${port.title}</div><div class="card-tags">Tags:&nbsp;${port.tags.split(", ").map(t => `<span class="badge ${t.toLowerCase()}">${t}</span>`).join(",")}</div><div class="card-description">${port.description}</div></div></div>`;
             }
         }
@@ -113,7 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } else if (top < 20) {
             navbar.classList.remove("scroll");
         }
-    
+
         if (top > 140) {
             scrollToTop.classList.add("show");
         } else if (top <= 70) {
@@ -123,7 +145,7 @@ window.addEventListener("DOMContentLoaded", () => {
         sections.forEach(sec => {
             const offset = sec.offsetTop - 250;
             const height = sec.offsetHeight;
-            const page   = sec.getAttribute("id");
+            const page = sec.getAttribute("id");
 
             if (top >= offset && top < offset + height) {
                 navLinks.forEach(links => {
@@ -146,7 +168,7 @@ window.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach(element => {
         element.addEventListener("click", e => {
             const attr = element.getAttribute("goto");
-            
+
             gopage(attr);
         })
     });
