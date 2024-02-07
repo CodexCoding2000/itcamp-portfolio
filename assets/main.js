@@ -84,9 +84,9 @@ addAnimation = (element, nextAnimation = "", cb) => {
         }
     }, false);
 }
-function setMode(viewMode = localStorage.getItem('viewMode'), elements) {
+function setMode(viewMode = localStorage.getItem('viewMode'), elements = document.querySelectorAll("#darkmodecontrol")) {
     elements.forEach(el => {
-        el.check = (viewMode && viewMode === 'dark')
+        el.checked = (viewMode && viewMode === 'dark')
     })
     localStorage.setItem("viewMode", viewMode)
     if (viewMode && viewMode === 'dark') {
@@ -100,13 +100,22 @@ window.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("[goto]");
     const darkmodeToggle = document.querySelectorAll("#darkmodecontrol");
-    
+
     if (darkmodeToggle) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            const newColorScheme = event.matches ? "dark" : "light";
-            setMode(newColorScheme, darkmodeToggle)
-        });        
-    
+        if (!localStorage.getItem('viewMode')) {
+            if (window.matchMedia) {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setMode("dark")
+                } else {
+                    setMode("light")
+                }
+            } else {
+                setMode("light")
+            }
+        } else {
+            setMode()
+        }
+
         darkmodeToggle.forEach(el => el.addEventListener("change", e => {
             setMode(e.target.checked ? "dark" : "light", darkmodeToggle)
         }));

@@ -11,7 +11,8 @@
     font-weight: 300;
     scroll-behavior: smooth;
 
-    transition: background .23s;
+    transition: background 0.23s;
+    -webkit-transition: background 0.23s;
 }
 
 body {
@@ -98,6 +99,7 @@ body::before {
     background: var(--background);
     z-index: 1070;
     transition: 0.5s;
+    -webkit-transition: 0.5s;
 }
 
 body.loaded::before {
@@ -164,6 +166,7 @@ body.loaded .landing-page .subtitle {
     border: var(--navbar-border);
     z-index: 1069;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -223,6 +226,7 @@ body.loaded .landing-page .subtitle {
     height: 2px;
     background-color: white;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
 }
 
 .navbar:not(.show) .navbar-toggle .line:first-child {
@@ -298,6 +302,7 @@ body.loaded .landing-page .subtitle {
     font-size: 12px;
     border-radius: 500px;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
     font-weight: bold;
     color: var(--nav-link-default-color);
 }
@@ -369,6 +374,7 @@ body.loaded .landing-page .subtitle {
     color: var(--nav-link-active-color);
     z-index: 1069;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
 }
 
 .scroll-to-top.show {
@@ -423,6 +429,7 @@ body.loaded .landing-page .subtitle {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: top 0.4s;
+    -webkit-transition: top 0.4s;
     box-sizing: border-box;
     padding: 22px;
 }
@@ -514,6 +521,7 @@ b {
 a {
     text-decoration: none;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
 }
 
 a:hover {
@@ -596,6 +604,7 @@ section.landing-page {
     }
 
     .navbar-body .navbar-menu,
+    .navbar-body .switch,
     .navbar-body .navbar-button {
         display: none;
     }
@@ -633,6 +642,10 @@ section.landing-page {
     }
 
     .navbar-body .navbar-button {
+        display: block;
+    }
+
+    .navbar-body .switch {
         display: block;
     }
 
@@ -719,13 +732,13 @@ section.landing-page {
 *::-webkit-scrollbar-thumb {
     background: var(--primary);
     transition: 0.23s;
+    -webkit-transition: 0.23s;
 }
 
 *::-webkit-scrollbar-thumb:hover {
     background: var(--primary-u-1);
 }
 
-/* The switch - the box around the slider */
 .switch {
     position: relative;
     display: inline-block;
@@ -734,14 +747,12 @@ section.landing-page {
     margin: auto 0;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -750,8 +761,9 @@ section.landing-page {
     right: 0;
     bottom: 0;
     background-color: var(--switch-bg);
-    -webkit-transition: 0.23s;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
+    border-radius: 34px;
 }
 
 .slider:before {
@@ -762,8 +774,9 @@ section.landing-page {
     left: 4px;
     bottom: 2px;
     background-color: var(--switch-dot);
-    -webkit-transition: 0.23s;
     transition: 0.23s;
+    -webkit-transition: 0.23s;
+    border-radius: 50%;
 }
 
 input:checked + .slider {
@@ -779,13 +792,4 @@ input:checked + .slider:before {
     -ms-transform: translateX(20px);
     transform: translateX(20px);
     background-color: var(--switch-dot-active);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
