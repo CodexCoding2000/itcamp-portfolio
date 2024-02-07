@@ -1,9 +1,9 @@
-@import"https://fonts.googleapis.com/css2?family=Athiti&display=swap";
-@import"https://kit-pro.fontawesome.com/releases/v6.5.1/css/pro.min.css";
+@import "https://fonts.googleapis.com/css2?family=Athiti&display=swap";
+@import "https://kit-pro.fontawesome.com/releases/v6.5.1/css/pro.min.css";
 
 @font-face {
     font-family: PaybAck;
-    src: url(../fonts/PaybAck.ttf)
+    src: url(../fonts/PaybAck.ttf);
 }
 
 * {
@@ -14,24 +14,24 @@
 
 :root {
     --background: #fff;
-    --primary: #FF5B00;
+    --primary: #ff5b00;
     --primary-u-1: #ff8645;
 
-    --navbar-bg: rgb(24, 24, 24, .4);
+    --navbar-bg: rgb(24, 24, 24, 0.4);
     --navbar-border: 1px solid #e1e1e1;
     --navbar-text: white;
 
-    --nav-link-default-color: rgb(255, 255, 255, .6);
-    --nav-link-hover-color: rgb(255, 255, 255, .8);
+    --nav-link-default-color: rgb(255, 255, 255, 0.6);
+    --nav-link-hover-color: rgb(255, 255, 255, 0.8);
     --nav-link-active-color: rgb(255, 255, 255);
     --nav-link-active-hover-color: rgb(255, 255, 255);
 
     --nav-link-default-bg: transparent;
-    --nav-link-hover-bg: rgb(255, 255, 255, .1);
+    --nav-link-hover-bg: rgb(255, 255, 255, 0.1);
     --nav-link-active-bg: var(--primary);
     --nav-link-active-hover-bg: var(--primary-u-1);
 
-    --section-odd: rgb(240,240,240);
+    --section-odd: rgb(240, 240, 240);
 }
 
 body {
@@ -51,8 +51,8 @@ body {
 .container-md,
 .container-sm {
     width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
+    box-sizing: border-box;
+    padding: 0 1rem;
     margin-right: auto;
     margin-left: auto;
 }
@@ -60,17 +60,128 @@ body {
 .navbar {
     position: absolute;
     top: 20px;
-    width: 1140px;
+    width: 70dvw;
     height: 50px;
     background-color: var(--navbar-bg);
+    box-sizing: border-box;
     padding: 0 20px;
     border-radius: 50px;
     backdrop-filter: blur(10px);
     border: var(--navbar-border);
     z-index: 1069;
-    transition: .23s;
+    transition: 0.23s;
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+
+.navbar.show {
+    height: 100dvh;
+    line-height: 50px;
+    border: none;
+}
+
+.navbar-body {
+    position: relative;
+    width: 100vw;
+    flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar.show .navbar-body{
+    border-bottom: var(--navbar-border);
+    border-style: dashed;
+}
+
+.navbar-content {
+    position: absolute;
+    top: 60px;
+    width: 100vw;
+    height: calc(100dvh - 60px);
+    pointer-events: none;
+}
+
+.navbar.show .navbar-content {
+    pointer-events: all;
+}
+
+.navbar-toggle {
+    cursor: pointer;
+    position: relative;
+    width: 26px;
+    height: 18px;
+    overflow: hidden;
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: white;
+    transition: 0.23s;
+}
+
+.navbar:not(.show) .navbar-toggle .line:first-child {
+    top: 0;
+}
+
+.navbar:not(.show) .navbar-toggle .line:nth-child(2) {
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.navbar:not(.show) .navbar-toggle .line:nth-child(3) {
+    top: calc(100% - 2px);
+}
+
+.navbar:not(.show) .navbar-toggle .line:last-child {
+    top: 100%;
+    opacity: 0;
+}
+
+.navbar:not(.show) .navbar-toggle:hover .line:first-child {
+    top: 0;
+    opacity: 0;
+}
+
+.navbar:not(.show) .navbar-toggle:hover .line:nth-child(2) {
+    top: 0;
+    translate: 0 0;
+}
+
+.navbar:not(.show) .navbar-toggle:hover .line:nth-child(3) {
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.navbar:not(.show) .navbar-toggle:hover .line:last-child {
+    top: calc(100% - 2px);
+    opacity: 1;
+}
+
+.navbar.show .navbar-toggle .line:first-child {
+    opacity: 0;
+}
+
+.navbar.show .navbar-toggle .line:nth-child(2) {
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    rotate: 45deg;
+}
+
+.navbar.show .navbar-toggle .line:nth-child(3) {
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    rotate: -45deg;
+}
+
+.navbar.show .navbar-toggle .line:last-child {
+    opacity: 0;
 }
 
 .navbar .container {
@@ -79,19 +190,13 @@ body {
     justify-content: space-between;
 }
 
-.navbar-menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 .navbar-button,
 .nav-link {
     cursor: pointer;
     padding: 5px 12px;
     font-size: 12px;
     border-radius: 500px;
-    transition: .23s;
+    transition: 0.23s;
     font-weight: bold;
     color: var(--nav-link-default-color);
 }
@@ -126,10 +231,12 @@ body {
     text-shadow: 0 0 10px var(--navbar-text);
 }
 
-.navbar.scroll {
+.navbar.show.scroll {
     position: fixed;
-    transition: none;
-    top: 0;
+}
+.navbar:not(.show).scroll {
+    position: fixed;
+    top: 0vw;
     width: 100vw;
     box-sizing: border-box;
     border-radius: 0;
@@ -159,7 +266,7 @@ body {
     font-size: 18px;
     color: var(--nav-link-active-color);
     z-index: 1069;
-    transition: .23s;
+    transition: 0.23s;
 }
 
 .scroll-to-top.show {
@@ -189,7 +296,7 @@ section > .container {
 }
 
 .landing-page::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -203,13 +310,13 @@ section > .container {
 }
 
 .landing-page::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100%;
-    background-color: rgb(0, 0, 0, .8);
+    background-color: rgb(0, 0, 0, 0.8);
     z-index: -1;
 }
 
@@ -231,7 +338,7 @@ section.landing-page {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-shadow: 6px 6px 10px rgb(0, 0, 0, .5);
+    text-shadow: 6px 6px 10px rgb(0, 0, 0, 0.5);
     background: linear-gradient(to top, var(--background), transparent 50%);
 }
 
@@ -257,18 +364,57 @@ section.landing-page {
     background: var(--section-odd);
 }
 
+.footer {
+    position: relative;
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: var(--section-odd);
+}
+
 @keyframes fadeIn {
     from {
-        top: -50px;
+        translate: 0 -70px;
     }
 
     to {
-        top: 0;
+        translate: 0 0;
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 0px) {
+    .navbar {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+        flex-direction: column;
+    }
 
+    .navbar-body .navbar-menu,
+    .navbar-body .navbar-button {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .landing-page .title {
+        font-size: 32px;
+    }
+
+    .landing-page .subtitle {
+        font-size: 18px;
+        margin-top: -30px;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
     .container-sm,
     .container {
         max-width: 540px;
@@ -276,6 +422,25 @@ section.landing-page {
 }
 
 @media (min-width: 768px) {
+    .navbar-body .navbar-menu {
+        display: flex;
+    }
+
+    .navbar-body .navbar-button {
+        display: block;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .landing-page .title {
+        font-size: 48px;
+    }
+
+    .landing-page .subtitle {
+        font-size: 32px;
+    }
 
     .container-md,
     .container-sm,
@@ -285,6 +450,23 @@ section.landing-page {
 }
 
 @media (min-width: 992px) {
+    .flex {
+        flex-direction: row;
+    }
+
+    .navbar {
+        top: 20px;
+        border: var(--navbar-border);
+        width: 70dvw;
+        border-radius: 50px;
+    }
+
+    .landing-page .title {
+        font-size: 54px;
+    }
+    .landing-page .subtitle {
+        font-size: 48px;
+    }
 
     .container-lg,
     .container-md,
@@ -295,7 +477,6 @@ section.landing-page {
 }
 
 @media (min-width: 1200px) {
-
     .container-xl,
     .container-lg,
     .container-md,
@@ -306,7 +487,6 @@ section.landing-page {
 }
 
 @media (min-width: 1400px) {
-
     .container-xxl,
     .container-xl,
     .container-lg,
@@ -324,7 +504,7 @@ section.landing-page {
 
 *::-webkit-scrollbar-thumb {
     background: var(--primary);
-    transition: .23s;
+    transition: 0.23s;
 }
 
 *::-webkit-scrollbar-thumb:hover {

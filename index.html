@@ -11,30 +11,56 @@
 
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="navbar-brand" onclick="scrolltotop()">
-                MY PORTFOLIO
+        <div class="navbar-body">
+            <div class="container" style="position: relative;">
+                <div class="navbar-brand" onclick="scrolltotop()">
+                    MY PORTFOLIO
+                </div>
+                <div class="navbar-menu">
+                    <div class="nav-link" goto="top">
+                        HOME
+                    </div>
+                    <div class="nav-link" goto="about">
+                        ABOUT ME
+                    </div>
+                    <div class="nav-link" goto="work">
+                        MY WORK
+                    </div>
+                </div>
+                <div class="navbar-button" goto="contact">
+                    CONTACT ME
+                </div>
+                <div class="navbar-toggle">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </div>
-            <div class="navbar-menu">
-                <div class="nav-link" goto="top">
-                    HOME
+        </div>
+        <div class="navbar-content">
+            <div class="container" style="position: relative;">
+                <div class="navbar-menu" style="flex: 1;">
+                    <div class="nav-link" goto="top">
+                        HOME
+                    </div>
+                    <div class="nav-link" goto="about">
+                        ABOUT ME
+                    </div>
+                    <div class="nav-link" goto="work">
+                        MY WORK
+                    </div>
+                    <div class="nav-link" goto="contact">
+                        CONTACT ME
+                    </div>
                 </div>
-                <div class="nav-link" goto="about">
-                    ABOUT ME
-                </div>
-                <div class="nav-link" goto="work">
-                    MY WORK
-                </div>
-            </div>
-            <div class="navbar-button active">
-                CONTACT ME
             </div>
         </div>
     </nav>
     <main>
         <section class="landing-page" id="home">
             <p class="title">
-                สวัสดีพีๆ <b>IT CAMP 20</b>
+                สวัสดีพี่ๆ <b>IT CAMP 20</b>
             </p>
             <p class="subtitle">
                 สำหรับเว็บไซต์นี้ผมต้องการนำเสนอตัวผมเองให้พี่ๆได้รู้จัก
@@ -45,17 +71,20 @@
                 <p class="title">
                     ผมคือไคร?
                 </p>
-                <div class="flex" style="width: 100%; justify-content: space-between;">
-                    <img src="img/avatar.png" alt="" style="flex: 1; object-fit: contain;">
+                <div class="flex" style="justify-content: space-between; align-items: center; gap: 120px;">
+                    <img src="img/avatar.png" alt="" style="flex: .5; object-fit: contain;">
                     <p style="flex: 1;">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สวัสดีครับ, ผมชื่อ ปอนด์ เรียนอยู่ ม.5 โรงเรียนหนองบัวพิทยาคาร
-                        ผมเริ่มสนใจในการเขียนโปรแกรมมาตั้งแต่ ป.5 ตั้งแต่นั้นมาผมก็เริ่มศึกษา
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สวัสดีครับ, ผมชื่อ ปอนด์ เรียนอยู่ ม.5
+                        โรงเรียนหนองบัวพิทยาคาร
+                        ผมเริ่มสนใจในการเขียนโปรแกรมมาตั้งแต่ ป.5 ตั้งแต่นั้นมาผมก็เริ่มศึกษา <br>
                         การเขียนโปรแกรมในภาษาต่างๆ มาเรื่อยๆ จนเมื่อผมขึ้น ม.1 มา
-                        ผมก็ได้มาเจอกับการเขียนเว็บไซต์ ซึ่งเหมือนเป็นเหมือนสิ่งที่ผมหาจากนั้นมาผมก็เริ่มพัฒนาฝีมือของผมเรื่อยมา และได้เรียนรู้การทำงาน
+                        ผมก็ได้มาเจอกับการเขียนเว็บไซต์
+                        ซึ่งเหมือนเป็นเหมือนสิ่งที่ผมหาจากนั้นมาผมก็เริ่มพัฒนาฝีมือของผมเรื่อยมา และได้เรียนรู้การทำงาน
                         โครงสร้าง และองค์ประกอบต่างๆ ในการทำเว็บไซต์มาเรื่อย<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปัจจุบัน ผมได้ทำ โปรเจค มาหลาย โปรเจคแล้ว ซึ่งส่วนใหญ่เป็นการทำ
-                        <b>User Interface</b> ในเกม <b>FiveM</b> แต่ละโปรเจคก็มีความท้าทายอยู่บ้างแต่ผม
-                        ก็ทำมันออกมาได้
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ปัจจุบัน ผมได้ทำ โปรเจค มาหลาย โปรเจคแล้ว
+                        ซึ่งส่วนใหญ่เป็นการทำ
+                        <b>User Interface</b> ในเกม <b>FiveM</b> ถึงแม้ว่าแต่ละโปรเจคจะมีความท้าทายอยู่บ้างแต่ผม
+                        ก็ทำมันออกมาได้ดี
                     </p>
                 </div>
             </div>
@@ -63,7 +92,15 @@
         <section id="work">
 
         </section>
+
+        <section id="contact">
+
+        </section>
     </main>
+
+    <footer class="footer">
+        THANKS FOR READING
+    </footer>
 
     <div class="scroll-to-top" onclick="scrolltotop()">
         &UpArrow;
