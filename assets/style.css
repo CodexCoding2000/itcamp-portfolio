@@ -39,6 +39,8 @@ body {
 
     --card-background: #fff;
     --social-background: #fff;
+    --card-hover-background: #eee;
+    --social-hover-background: #eee;
 
     --switch-bg: #aaa;
     --switch-dot: #fff;
@@ -70,6 +72,8 @@ body.dark-mode {
 
     --card-background: #242424;
     --social-background: #242424;
+    --card-hover-background: #343434;
+    --social-hover-background: #343434;
 
     --switch-bg: #333333;
     --switch-dot: #181818;
@@ -401,6 +405,54 @@ body.loaded .landing-page .subtitle {
     border-radius: 22px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: .23s;
+    -webkit-transition: .23s;
+}
+.card:hover {
+    background: var(--card-hover-background);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "a b"
+        "c c";
+}
+
+.social-grid .social:first-child {
+    grid-area: a;
+}
+
+.social-grid .social:nth-child(2) {
+    grid-area: b;
+}
+
+.social-grid .social:last-child {
+    grid-area: c;
+}
+
+.social {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 22px;
+    background: var(--social-background);
+    border-radius: 22px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: .23s;
+    -webkit-transition: .23s;
+}
+
+.social:hover {
+    background: var(--social-hover-background);
 }
 
 .card-img {
